@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mes adresses - La Boutique Française {% endblock %}
+
+{% block content %}
+
+<a href="{{path('account_adress_add')}}" class="btn btn-info btn-sm float-right">Ajouter une adresse</a>
+<h1>Mes adresses</h1>
+
+les infos pers
+<a href="{{path('app_account')}}">Retour</a>
+<hr>
+{% if app.user.addresses|length ==0 %}
+    <p class="text-center">Vous n'avez pas encore ajouté d'adresse dans votre compte client.  <a href="{{path('account_adress_add')}}" >Cliquer ici pour en ajouter</a></p>
+   
+{% else %}
+    affichage adresses
+{% endif %}
+{% endblock %}
